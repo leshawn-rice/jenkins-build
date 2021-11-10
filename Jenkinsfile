@@ -7,7 +7,8 @@ pipeline {
         stage('Build') {
             steps {
               echo 'Building...'
-              sh 'cd /home/ld-admin; ./build.sh 4.2.0 -rc5'
+              sh 'cd /home/ld-admin'
+              sh './build.sh 4.2.0 -rc5'
             }
         }
         stage('Deploy') {
