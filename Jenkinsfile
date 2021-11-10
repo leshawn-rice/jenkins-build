@@ -8,7 +8,7 @@ pipeline {
             steps {
               echo 'Building...'
               sh '''#!/bin/bash
-                    cd /home/ld-admin'
+                    cd /home/ld-admin
                     ./build.sh 4.2.0 -rc5
               '''
             }
