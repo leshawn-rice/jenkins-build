@@ -7,6 +7,7 @@ pipeline {
         stage('Build') {
             steps {
               echo 'Building...'
+              sh -c '/home/jenkins/build.sh'
             }
         }
         stage('Deploy') {
