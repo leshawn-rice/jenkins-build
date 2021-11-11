@@ -16,6 +16,7 @@ pipeline {
               ansiblePlaybook(
                   playbook: '/home/ld-admin/ansible/test/playbook.yml', 
                   inventory: 'inventory.ini',
+                  extras: '-vvv'
               )
             }
         }
