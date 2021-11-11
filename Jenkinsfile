@@ -16,7 +16,7 @@ pipeline {
               ansiblePlaybook(
                   playbook: '/home/ld-admin/ansible/test/playbook.yml', 
                   inventory: 'inventory.ini',
-                  extras: '-e ansible_become_pass=$(cat /home/ld-admin/.ssh/become_pass)'
+                  extras: '-e "ansible_become_pass=$(cat /home/ld-admin/.ssh/become_pass)"'
               )
             }
         }
