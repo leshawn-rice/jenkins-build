@@ -13,7 +13,11 @@ pipeline {
         stage('Upgrade') {
             steps {
               echo 'Upgrading...'
-              ansiblePlaybook playbook: '/home/ld-admin/ansible/test/playbook.yml', inventory: 'inventory.ini'
+              ansiblePlaybook(
+                  playbook: '/home/ld-admin/ansible/test/playbook.yml', 
+                  inventory: 'inventory.ini'
+                  extras: '-e ansible_become_pass=$(cat /home/ld-admin/.ssh/become_pass)'
+              )
             }
         }
         stage('Deploy') {
