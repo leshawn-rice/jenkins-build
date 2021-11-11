@@ -18,7 +18,7 @@ if rc:
 with open("inventory.ini", "w") as inventory_file:
     inventory_file.write("[all:vars]\n")
     inventory_file.write("ansible_ssh_user=ld-admin\n")
-    inventory_file.write("ansible_ssh_private_key_file=/home/ld-admin/.ssh/dynamic-keypair.pem")
+    inventory_file.write("ansible_ssh_private_key_file=/tmp/dynamic-keypair.pem\n")
     inventory_file.write(f"old_version={old_version}\n")
     inventory_file.write(f"new_version={new_version}\n")
     inventory_file.write(f"rc={rc}\n")
