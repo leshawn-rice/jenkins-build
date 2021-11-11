@@ -23,12 +23,20 @@
     confirm: yes
     private: no
 
+  - name: packages
+    prompt: Packages to install (space seperated)
+    private: no
+
   tasks:
 
   - name: Set release candidate
     set_fact:
       rc: "-rc{{ rc }}"
     when: rc != ""
+
+  - name: Set packages list
+    set_fact:
+      packages: "{{ packages.split(' ') }}"
 
   - name: Create Jenkinsfile
     template:

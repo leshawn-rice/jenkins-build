@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
               echo 'Building...'
-              sh '/home/ld-admin/build.sh 4.2.0 -rc5'
+              sh '/home/ld-admin/build.sh 4.2.0 -rc2'
             }
         }
         stage('Upgrade') {
