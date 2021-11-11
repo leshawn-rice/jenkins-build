@@ -17,6 +17,9 @@ pipeline {
                   playbook: '/home/ld-admin/ansible/test/playbook.yml', 
                   inventory: 'inventory.ini',
                   extras: '-vvv'
+                  extraVars: [
+                      ansible_become_pass: "Uplevel2016-ServerPass"
+                  ]
               )
             }
         }
