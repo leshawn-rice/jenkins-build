@@ -17,7 +17,7 @@ pipeline {
                   playbook: '/home/ld-admin/ansible/test/playbook.yml', 
                   inventory: 'inventory.ini',
                   extraVars: [
-                      ansible_become_pass: [value: '$(cat /tmp/become_pass)']
+                      ansible_become_pass: '$(cat /tmp/become_pass)'
                   ]
               )
             }
