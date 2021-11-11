@@ -7,12 +7,18 @@ pipeline {
         stage('Build') {
             steps {
               echo 'Building...'
-              sh 'pwd;/home/ld-admin/build.sh 4.2.0 -rc5'
+              sh '/home/ld-admin/build.sh 4.2.0 -rc5'
+            }
+        }
+        stage('Upgrade') {
+            steps {
+              echo 'Upgrading...'
+              ansiblePlaybook playbook: '/home/ld-admin/ansible/test/playbook.yml', inventory: 'inventory.ini'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Deploying...'
             }
         }
         stage('Test') {
