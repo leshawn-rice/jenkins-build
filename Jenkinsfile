@@ -14,7 +14,7 @@ pipeline {
             steps {
               echo 'Upgrading...'
               ansiblePlaybook(
-                  playbook: '/home/ld-admin/ansible/test/playbook.yml', 
+                  playbook: '/home/ld-admin/ansible/upgrade/playbook.yml', 
                   inventory: 'inventory.ini',
                   extraVars: [
                       ansible_become_pass: """${sh(
