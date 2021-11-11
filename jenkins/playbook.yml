@@ -36,7 +36,7 @@
 
   - name: Set packages list
     set_fact:
-      packages: "{{ packages.split(' ') }}"
+      packages: "{{ packages.split(' ') if packages != '' else [] }}"
 
   - name: Create Jenkinsfile
     template:
